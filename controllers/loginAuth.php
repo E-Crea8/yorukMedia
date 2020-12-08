@@ -39,6 +39,16 @@
                         User account does not exist.
                     </div>';
             } else {
+                //Set Remember Me Cookie
+                if(!empty($_POST["remember"])) {
+                    setcookie ("username_signin", $username_signin, time()+ (10 * 365 * 24 * 60 * 60));  
+                    setcookie ("password_signin",	$password_signin,	time()+ (10 * 365 * 24 * 60 * 60));
+                } else {
+                    setcookie ("username_signin",""); 
+                    setcookie ("password_signin","");
+                }
+
+
                 // Fetch user data and store in php session
                 while($row = mysqli_fetch_array($query)) {
                     $user_id       = $row['id'];

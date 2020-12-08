@@ -1,3 +1,7 @@
+<?php
+include('./controllers/functions.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,7 +136,7 @@
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
-												<p class="card-category">Order</p>
+												<p class="card-category">Order<?php echo $id_session; ?></p>
 												<h4 class="card-title">576</h4>
 											</div>
 										</div>
@@ -199,5 +203,28 @@
 <!-- Azzara DEMO methods, don't include it in your project! -->
 <script src="assets/js/setting-demo.js"></script>
 <script src="assets/js/demo.js"></script>
+
+<!--Logout Sweet Alert -->
+<script type="text/javascript">
+        $(document).ready(function(){
+            $("#logout").click(function(){
+
+                    swal({title:'Logout', 
+                        text:'Are you sure you want to logout of the application?', 
+                        icon:'warning', 
+                        buttons: true, 
+                        dangerMode: true
+                    })
+                    .then((willOUT) => {
+                            if (willOUT) {
+                                  window.location.href = 'logout.php', {
+                                  icon: 'success',
+                                }
+                              }
+                    });
+
+            });
+        });
+    </script>
 </body>
 </html>

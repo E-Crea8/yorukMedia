@@ -155,7 +155,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a href="index.html">
+							<a href="#" id="logout">
 								<i class="fas fa-sign-out-alt"></i>
 								<p>Logout</p>
 							</a>
