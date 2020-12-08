@@ -36,13 +36,14 @@
 <!-- End Login script -->
 
 <form name="login" method="POST">
+	<div class="pt-4">
 		<!-- Echo all PHP Login Alerts Here-->
 		<?php echo $accountNotExistErr; ?>
         <?php echo $emailPwdErr; ?>
         <?php echo $verificationRequiredErr; ?>
         <?php echo $email_empty_err; ?>
         <?php echo $pass_empty_err; ?>
-
+		</div>
 
 			<h3 class="text-center pt-4">Login Here!</h3>
 			<div class="login-form">
