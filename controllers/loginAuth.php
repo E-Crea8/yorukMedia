@@ -6,7 +6,7 @@
 
 
 
-    global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
+    global $wrongPwdErr, $loginSuccess, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
     if(isset($_POST['login'])) {
         $username_signin        = $_POST['username_signin'];
@@ -62,7 +62,11 @@
                 // Allow only verified user
                 if($is_active == '1') {
                     if($username_signin == $username && $password_signin == $password) {
-                       header("Location: ./app/dashboard");
+                        $loginSuccess = '<div class="alert alert-success">
+                                Logging in...
+                            </div>';
+                            header( "refresh:5;url=./app/dashboard" );
+                       //header("Location: ./app/dashboard");
                        
                        $_SESSION['id'] = $user_id;
                        $_SESSION['user'] = $username;

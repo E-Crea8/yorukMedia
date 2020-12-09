@@ -24,8 +24,8 @@
 </head>
 <body class="login">
 	<div class="wrapper wrapper-login">
-		<div class="container container-login animated fadeIn">
-        <div class="row pb-2" style="border-bottom: 1px solid #ccc;">
+		<div class="container container-login animated fadeIn mt-0">
+        <div class="row pb-2 mt-0" style="border-bottom: 1px solid #ccc;">
         <div class="col-12" >
         <img class="img-fluid" src="./assets/img/logo.fw.png" alt="logo">
         </div>
@@ -43,9 +43,10 @@
         <?php echo $verificationRequiredErr; ?>
         <?php echo $email_empty_err; ?>
         <?php echo $pass_empty_err; ?>
+        <?php echo $loginSuccess; ?>
 		</div>
 
-			<h3 class="text-center pt-4">Login Here!</h3>
+			<h3 class="text-center pt-4 st">Login Here!</h3>
 			<div class="login-form">
 				<div class="form-group">
 					<label for="username" class="placeholder"><b>Username</b></label>
@@ -53,7 +54,7 @@
 				</div>
 				<div class="form-group">
 					<label for="password" class="placeholder"><b>Password</b></label>
-					<a href="#" class="link float-right">Forget Password ?</a>
+					<a href="#" class="link float-right" style="a{color: #A01F62 !important;}">Forget Password ?</a>
 					<div class="position-relative">
 						<input id="password" name="password_signin" type="password" class="form-control" value="<?php if(isset($_COOKIE["password_signin"])) { echo $_COOKIE["password_signin"]; } ?>" required>
 						<div class="show-password">
@@ -66,7 +67,7 @@
 						<input type="checkbox" name="remember" class="custom-control-input" id="rememberme" <?php if(isset($_COOKIE["username_signin"])) { ?> checked <?php } ?>>
 						<label class="custom-control-label m-0" for="rememberme">Remember Me</label>
 					</div>
-					<button type="submit" name="login" class="btn btn-primary col-md-5 float-right mt-3 mt-sm-0 fw-bold">Sign In</button>
+					<button type="submit" name="login" class="btn btn-primary col-md-5 float-right mt-3 mt-sm-0 fw-bold" style="background-color: #A01F62 !important; border-color: #A01F62 !important;">Sign In</button>
 				</div>
 				<!-- 				<div class="form-action">
 					<a href="#" class="btn btn-primary btn-rounded btn-login">Sign In</a>
