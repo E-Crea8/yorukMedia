@@ -1,6 +1,6 @@
 <div class="logo-header">
 				
-				<a href="index.html" class="logo">
+				<a href="dashboard" class="logo">
 					<img src="./assets/img/logotxt.fw.png" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">

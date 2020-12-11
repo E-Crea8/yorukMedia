@@ -6,14 +6,16 @@ include ('./session.php');
 include ('./../includes/dbcon.php');
 
 //Create function to fetch user details
-function getUserName(){
+function getUserName($id_session){
     global $connection;
     
-    $user_query = "SELECT * FROM login_table WHERE user_id='$id_session'";
-    $sqlQuery = mysqli_query($connection, $user_query);
+    $getNameQuery = "SELECT * FROM login_table WHERE id='$id_session'";
+    $doGetNameQuery = mysqli_query($connection, $getNameQuery);
 
-    $row=mysqli_fetch_array($sqlQuery);
-    $userRefCode = $row['user_ref_code'];
+    $row=mysqli_fetch_array($doGetNameQuery);
+    $getFirstName = $row['firstname'];
+
+    echo $getFirstName;
 
 }
 

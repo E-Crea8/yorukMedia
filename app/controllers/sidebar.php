@@ -16,7 +16,6 @@
 								</span>
 							</a>
 							<div class="clearfix"></div>
-
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
@@ -40,7 +39,7 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item active">
-							<a href="index.html">
+							<a href="dashboard">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							</a>
@@ -52,13 +51,13 @@
 							<h4 class="text-section">MENU LINKS</h4>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
+							<a data-toggle="collapse" href="#user">
                             <!--<i class="fas fa-layer-group"></i>-->
                             <i class="fas fa-users"></i>
 								<p>Users</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="base">
+							<div class="collapse" id="user">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="./create-user">
@@ -74,12 +73,12 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
+							<a data-toggle="collapse" href="#messages">
 								<i class="fas fa-envelope"></i>
 								<p>Messages</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="forms">
+							<div class="collapse" id="messages">
 								<ul class="nav nav-collapse">
                                 <li>
 										<a href="./create-message">
@@ -96,7 +95,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#tables">
+							<a data-toggle="collapse" href="#publishing">
 								<i class="fas fa-table"></i>
 								<p>Publishing</p>
 								<span class="caret"></span>
@@ -153,16 +152,13 @@
 								</ul>
 							</div>
 						</li>
-
 						<li class="nav-item">
 							<a href="#" id="logout">
 								<i class="fas fa-sign-out-alt"></i>
 								<p>Logout</p>
 							</a>
 						</li>
-
 						
-
                     </ul>
 				</div>
 			</div>
