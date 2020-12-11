@@ -54,20 +54,20 @@
 									<div class="user-box">
 										<div class="avatar-lg"><img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>Samson</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4><?php echo getUserName($id_session); ?></h4>
+											<p class="text-muted"><?php echo getUserEmail($id_session); ?></p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="profile">My Profile</a>
+									<!-- <a class="dropdown-item" href="#">My Balance</a>
+									<a class="dropdown-item" href="#">Inbox</a> -->
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Account Setting</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#" id="logout">Logout</a>
+									<a class="dropdown-item" href="#" id="navbarLogout">Logout</a>
 								</li>
 							</ul>
 						</li>

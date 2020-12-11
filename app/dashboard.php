@@ -228,5 +228,27 @@ require_once ('./session.php');
             });
         });
     </script>
+<!--Logout Sweet Alert Navbar-->
+<script type="text/javascript">
+        $(document).ready(function(){
+            $("#navbarLogout").click(function(){
+
+                    swal({title:'Logout', 
+                        text:'Are you sure you want to logout of the application?', 
+                        icon:'warning', 
+                        buttons: true, 
+                        dangerMode: true
+                    })
+                    .then((willOUT) => {
+                            if (willOUT) {
+                                  window.location.href = 'logout.php', {
+                                  icon: 'success',
+                                }
+                              }
+                    });
+
+            });
+        });
+    </script>
 </body>
 </html>

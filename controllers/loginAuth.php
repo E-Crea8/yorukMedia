@@ -65,6 +65,7 @@
                         $loginSuccess = '<div class="alert alert-success">
                                 Logging in...
                             </div>';
+
                             header( "refresh:5;url=./app/dashboard" );
                        //header("Location: ./app/dashboard");
                        

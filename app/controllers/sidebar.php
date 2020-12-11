@@ -10,7 +10,7 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Samson
+								<?php echo getUserName($id_session); ?>
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -100,7 +100,7 @@
 								<p>Publishing</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="tables">
+							<div class="collapse" id="publishing">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="./publish-winners">
@@ -163,3 +163,26 @@
 				</div>
 			</div>
 		</div>
+
+<!--Logout Sweet Alert -->
+<script type="text/javascript">
+        $(document).ready(function(){
+            $("#logout").click(function(){
+
+                    swal({title:'Logout', 
+                        text:'Are you sure you want to logout of the application?', 
+                        icon:'warning', 
+                        buttons: true, 
+                        dangerMode: true
+                    })
+                    .then((willOUT) => {
+                            if (willOUT) {
+                                  window.location.href = 'logout.php', {
+                                  icon: 'success',
+                                }
+                              }
+                    });
+
+            });
+        });
+    </script>

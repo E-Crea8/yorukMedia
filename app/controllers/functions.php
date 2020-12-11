@@ -19,6 +19,19 @@ function getUserName($id_session){
 
 }
 
+//Create Function to Generate User Email
+function getUserEmail($id_session){
+    global $connection;
+    $getEmailQuery = "SELECT * FROM login_table WHERE id='$id_session'";
+    $doGetEmailQuery = mysqli_query($connection, $getEmailQuery);
+
+    $row = mysqli_fetch_array($doGetEmailQuery);
+    $getEmail = $row['email'];
+
+    echo $getEmail;
+}
+
+
 function logout(){
     global $connection;
     $logoutQuery = "SELECT * FROM login_table WHERE id='$id_session'";
