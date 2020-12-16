@@ -1,6 +1,5 @@
 <?php
 require_once ('./controllers/functions.php');
-require_once ('./session.php');
 
 ?>
 
@@ -81,8 +80,8 @@ require_once ('./session.php');
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
-												<p class="card-category">Visitors</p>
-												<h4 class="card-title">1,294</h4>
+												<p class="card-category">Users</p>
+												<h4 class="card-title">45<?php echo $id_session; ?></h4>
 											</div>
 										</div>
 									</div>
@@ -94,14 +93,14 @@ require_once ('./session.php');
 								<div class="card-body">
 									<div class="row align-items-center">
 										<div class="col-icon">
-											<div class="icon-big text-center icon-info bubble-shadow-small">
-												<i class="far fa-newspaper"></i>
+											<div class="icon-big text-center icon-warning bubble-shadow-small">
+												<i class="far fa-user"></i>
 											</div>
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
-												<p class="card-category">Subscribers</p>
-												<h4 class="card-title">1303</h4>
+												<p class="card-category">Winners</p>
+												<h4 class="card-title">9</h4>
 											</div>
 										</div>
 									</div>
@@ -119,8 +118,8 @@ require_once ('./session.php');
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
-												<p class="card-category">Sales</p>
-												<h4 class="card-title">$ 1,345</h4>
+												<p class="card-category">Games</p>
+												<h4 class="card-title">1</h4>
 											</div>
 										</div>
 									</div>
@@ -133,13 +132,13 @@ require_once ('./session.php');
 									<div class="row align-items-center">
 										<div class="col-icon">
 											<div class="icon-big text-center icon-secondary bubble-shadow-small">
-												<i class="far fa-check-circle"></i>
+												<i class="far fa-newspaper"></i>
 											</div>
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
-												<p class="card-category">Order<?php echo $id_session; ?></p>
-												<h4 class="card-title">576</h4>
+												<p class="card-category">News</p>
+												<h4 class="card-title">5</h4>
 											</div>
 										</div>
 									</div>

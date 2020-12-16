@@ -1,15 +1,21 @@
 <?php
 //Database Connection
-include('./../includes/dbcon.php');
+include('../inc/dbcon.php');
 
 //Add User Session
-include('./session.php');
+include('../session.php');
+confirm_logged_in();
 
-global $connection;
-$logoutQuery = "SELECT * FROM login_table WHERE id='$id_session'";
-$doLogoutQuery = mysqli_query($connection, $logoutQuery);
+$id_session = $_SESSION['user_id'];
+
+
+
+global $dbc;
+$logoutQuery = "SELECT * FROM users WHERE user_id='$id_session'";
+$doLogoutQuery = mysqli_query($dbc, $logoutQuery);
 $row=mysqli_fetch_array($doLogoutQuery);
-$getUser = $row['username'];
+$getUserEmail = $row['email'];
+$getUsername = $row['username'];
 
 date_default_timezone_set('Africa/Lagos');
 $date = date('M d, Y h:ia', time());
@@ -18,13 +24,13 @@ session_start();
 session_destroy();
 
 //Insert Logout Action By User to app history database
-$insertLogoutHistoryQuery = "INSERT INTO app_history (date, action, user) VALUES ('$date', '$getUser Logged Out', '$getUser')";
+$insertLogoutHistoryQuery = "INSERT INTO app_history (user, action, date) VALUES ('$getUserEmail', '$getUsername logged out', 'Null')";
 
-$doInsertLogoutHistoryQuery = mysqli_query($connection, $insertLogoutHistoryQuery);
+$doInsertLogoutHistoryQuery = mysqli_query($dbc, $insertLogoutHistoryQuery);
 
 //Perform Logout Action
 if(!$doInsertLogoutHistoryQuery){
-    die("MySQL Query Failed" . mysqli_error($connection));
+    die("MySQL Query Failed" . mysqli_error($dbc));
 
 }
 else{

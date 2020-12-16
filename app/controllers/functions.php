@@ -1,16 +1,19 @@
 <?php
 //Start Session Here
-include ('./session.php');
+require('../session.php');
+confirm_logged_in();
+
+$id_session = $_SESSION['user_id'];
 
 //Database Connection
-include ('./../includes/dbcon.php');
+include ('./../inc/dbcon.php');
 
 //Create function to fetch user details
 function getUserName($id_session){
-    global $connection;
+    global $dbc;
     
-    $getNameQuery = "SELECT * FROM login_table WHERE id='$id_session'";
-    $doGetNameQuery = mysqli_query($connection, $getNameQuery);
+    $getNameQuery = "SELECT * FROM users WHERE user_id='$id_session'";
+    $doGetNameQuery = mysqli_query($dbc, $getNameQuery);
 
     $row=mysqli_fetch_array($doGetNameQuery);
     $getFirstName = $row['firstname'];
@@ -21,9 +24,9 @@ function getUserName($id_session){
 
 //Create Function to Generate User Email
 function getUserEmail($id_session){
-    global $connection;
-    $getEmailQuery = "SELECT * FROM login_table WHERE id='$id_session'";
-    $doGetEmailQuery = mysqli_query($connection, $getEmailQuery);
+    global $dbc;
+    $getEmailQuery = "SELECT * FROM users WHERE user_id='$id_session'";
+    $doGetEmailQuery = mysqli_query($dbc, $getEmailQuery);
 
     $row = mysqli_fetch_array($doGetEmailQuery);
     $getEmail = $row['email'];
@@ -34,8 +37,8 @@ function getUserEmail($id_session){
 
 function logout(){
     global $connection;
-    $logoutQuery = "SELECT * FROM login_table WHERE id='$id_session'";
-    $doLogoutQuery = mysqli_query($connection, $logoutQuery);
+    $logoutQuery = "SELECT * FROM users WHERE user_id='$id_session'";
+    $doLogoutQuery = mysqli_query($dbc, $logoutQuery);
     $row=mysqli_fetch_array($doLogoutQuery);
     $getUser = $row['username'];
 
@@ -48,11 +51,11 @@ function logout(){
     //Insert Logout Action By User to app history database
     $insertLogoutHistoryQuery = "INSERT INTO app_history (date, action, user) VALUES ('$date', '$getUser Logged Out', '$getUser')";
 
-    $doInsertLogoutHistoryQuery = mysqli_query($connection, $insertLogoutHistoryQuery);
+    $doInsertLogoutHistoryQuery = mysqli_query($dbc, $insertLogoutHistoryQuery);
 
     //Perform Logout Action
     if(!$doInsertLogoutHistoryQuery){
-        die("MySQL Query Failed" . mysqli_error($connection));
+        die("MySQL Query Failed" . mysqli_error($dbc));
 
     }
     else{
