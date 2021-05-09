@@ -53,7 +53,7 @@ if ($hashPassword == ''){
            
             ?>    <script type="text/javascript">
                      //then it will show user is not active
-                     alert("<?php echo  $_SESSION['FIRST_NAME']; ?> Welcome!");
+                     alert("Your account is inactive. Contact the super administrator");
                      window.location = "../app-home";
                  </script>
             <?php        
